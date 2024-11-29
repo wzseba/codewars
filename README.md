@@ -1,2 +1,2 @@
 # codewars
-#####1- **NthSeries**
+1- **NthSeries**
