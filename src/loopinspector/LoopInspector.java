@@ -7,15 +7,28 @@ public class LoopInspector {
 		Node nodo1 = node;
 		Node nodo2 = node;
 
+		// verificar que hay un bucle en la lista enlazada
 		while (nodo2 != null && nodo2.getNext() != null) {
 			nodo1 = nodo1.getNext();
 			nodo2 = nodo2.getNext().getNext();
 
 			if (nodo1 == nodo2)
-				return 0;
+				break;
 		}
 
-		return 0;
+		if (nodo2 == null || nodo2.getNext() == null) {
+			return 0;
+		}
+
+		int cont = 1;
+
+		nodo1 = nodo1.getNext();
+		while (nodo1 != nodo2) {
+			cont++;
+			nodo1 = nodo1.getNext();
+		}
+
+		return cont;
 
 	}
 
